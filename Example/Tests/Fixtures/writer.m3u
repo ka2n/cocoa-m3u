@@ -1,0 +1,9 @@
+#EXTM3U
+#Test Comment
+#コメント
+
+foo.m4a
+#EXTINF:10,
+bar.m4a
+#EXTINF:20,Artist - Title
+baz.m4a

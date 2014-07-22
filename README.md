@@ -9,6 +9,10 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Current Status
+
+only m3u and extended m3u writer now
+
 ## Requirements
 
 ## Installation

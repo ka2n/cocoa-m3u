@@ -1,0 +1,20 @@
+PODS:
+  - cocoa-m3u (0.1.0)
+  - Expecta (0.3.1)
+  - Specta (0.2.1)
+
+DEPENDENCIES:
+  - cocoa-m3u (from `../`)
+  - Expecta
+  - Specta (~> 0.2.1)
+
+EXTERNAL SOURCES:
+  cocoa-m3u:
+    :path: ../
+
+SPEC CHECKSUMS:
+  cocoa-m3u: 3ce5bd70aa3316dc94a7143655585de6ba6d8e0c
+  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
+  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+
+COCOAPODS: 0.33.1

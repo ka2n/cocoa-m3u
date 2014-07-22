@@ -6,37 +6,22 @@
 //  Copyright (c) 2014 Katsuma Ito. All rights reserved.
 //
 
-SpecBegin(InitialSpecs)
+#import "M3U.h"
+#import "TestHelper.h"
 
-describe(@"these will fail", ^{
+SpecBegin(WriterSpecs)
 
-    it(@"can do maths", ^{
-        expect(1).to.equal(2);
-    });
-
-    it(@"can read", ^{
-        expect(@"number").to.equal(@"string");
-    });
+describe(@"write", ^{
+    M3UExtendedWriter *writer = [[M3UExtendedWriter alloc] init];
+    [writer writeComment:@"Test Comment"];
+    [writer writeComment:@"コメント"];
+    [writer writeBlankLine];
+    [writer writeFileName:@"foo.m4a"];
+    [writer writeFileName:@"bar.m4a" duration:10 title:nil];
+    [writer writeFileName:@"baz.m4a" duration:20 title:@"Artist - Title"];
     
-    it(@"will wait and fail", ^AsyncBlock {
-        
-    });
-});
-
-describe(@"these will pass", ^{
-    
-    it(@"can do maths", ^{
-        expect(1).beLessThan(23);
-    });
-    
-    it(@"can read", ^{
-        expect(@"team").toNot.contain(@"I");
-    });
-    
-    it(@"will wait and succeed", ^AsyncBlock {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-            done();
-        });
+    it(@"exal to the fixture", ^{
+        expect([writer string]).to.equal([TestHelper stringWithContentsOfFixture:@"writer.m3u"]);
     });
 });
 
