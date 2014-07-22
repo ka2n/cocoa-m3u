@@ -1,0 +1,7 @@
+
+target 'cocoa-m3u', :exclusive => true do
+  pod "cocoa-m3u", :path => "../"
+
+  pod 'Specta', '~> 0.2.1'
+  pod 'Expecta'
+end
